@@ -6,6 +6,7 @@ import PageColorPick1 from "./PageColorPick1";
 import PageVerifyColor from "./PageVerifyColor";
 import PageFavColor1 from "./PageFavColor1";
 import PageNote1 from "./PageNote1";
+import PageColorPick2 from "./PageColorPick2";
 
 import '../App.css';
 
@@ -36,7 +37,10 @@ class MainPage extends Component {
         page = <PageFavColor1 goNext={this.gotoNote1.bind(this)} />;
         break;
       case PageState.NOTE_1:
-        page = <PageNote1 />;
+        page = <PageNote1 goNext={this.gotoColorPick2.bind(this)} />;
+        break;
+      case PageState.COLOR_PICK_2:
+        page = <PageColorPick2 />;
         break;
       default:
         break;
@@ -51,6 +55,10 @@ class MainPage extends Component {
 
   gotoColorPick1() {
     this.setState({pageState:PageState.COLOR_PICK_1});
+  }
+
+  gotoColorPick2() {
+    this.setState({pageState:PageState.COLOR_PICK_2});
   }
 
   pickColor(colorIndex) {

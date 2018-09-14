@@ -3,7 +3,8 @@ const PageState = {
   COLOR_PICK_1: 2,
   VERIFY_COLOR: 3,
   FAV_COLOR_1: 4,
-  NOTE_1:5
+  NOTE_1:5,
+  COLOR_PICK_2: 6,
 };
 
 const Color = {

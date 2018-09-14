@@ -15,7 +15,7 @@ class PageFavColor1 extends Component {
           const text = colorName+' #/%';
           return <div key={text}>{text}</div>;
         })}
-        <TextLink text={'NEXT'} click={this.props.goNext} />
+        <div style={{marginTop:'20px'}}><TextLink text={'NEXT'} click={this.props.goNext} /></div>
       </div>
     );
   }// render
