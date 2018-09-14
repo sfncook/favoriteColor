@@ -28,6 +28,10 @@ class PageColorPick1 extends Component {
         {this.colors.map((color)=>{
           return <TextLink text={color} click={this.clickColor(color)} key={color}/>;
         })}
+        <div style={{marginTop:'30px'}}>PLEASE CLICK ON YOUR FAVORITE COLOR.</div>
+        <div>
+          <div style={{marginTop:'10px', color:'darkgray', width:'330px', margin:'auto'}}>(Random color order each time page is viewed. Each color text links to next page.)</div>
+        </div>
       </div>
     );
   }// render
