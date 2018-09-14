@@ -11,8 +11,9 @@ class PageColorPick1 extends Component {
     return (
       <div className="centered">
         <h1 style={{whiteSpace:'nowrap', fontWeight:'normal'}}>WHAT IS YOUR FAVORITE COLOR?</h1>
-        {Object.keys(Color).map((colorObj)=>{
-          return <TextLink text={colorObj} click={this.clickColor(colorObj)} key={colorObj}/>;
+        {Object.keys(Color).map((colorName)=>{
+          const colorIndex = Color[colorName];
+          return <TextLink text={colorName} click={this.clickColor(colorIndex)} key={colorName}/>;
         })}
         <div style={{marginTop:'30px'}}>PLEASE CLICK ON YOUR FAVORITE COLOR.</div>
         <div>
@@ -22,10 +23,10 @@ class PageColorPick1 extends Component {
     );
   }// render
 
-  clickColor(color) {
+  clickColor(colorIndex) {
     return (e)=>{
       e.preventDefault();
-      this.props.pickColor(color);
+      this.props.pickColor(colorIndex);
     }
   }
 }
