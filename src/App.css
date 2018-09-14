@@ -42,3 +42,8 @@
   text-decoration: underline;
   color: blue;
 }
+
+h1 {
+  white-pace: nowrap;
+  font-weight: normal;
+}

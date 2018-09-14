@@ -10,7 +10,7 @@ class PageColorPick1 extends Component {
     // console.log('Object.keys(Color):',Object.keys(Color));
     return (
       <div className="centered">
-        <h1 style={{whiteSpace:'nowrap', fontWeight:'normal'}}>WHAT IS YOUR FAVORITE COLOR?</h1>
+        <h1>WHAT IS YOUR FAVORITE COLOR?</h1>
         {Object.keys(Color).map((colorName)=>{
           const colorIndex = Color[colorName];
           return <TextLink text={colorName} click={this.clickColor(colorIndex)} key={colorName}/>;
