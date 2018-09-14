@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../App.css';
 // import { ColorProps } from '../utils.js';
 import {Color} from "../utils";
-// import TextLink from "./TextLink";
+import TextLink from "./TextLink";
 
 class PageFavColor1 extends Component {
 
@@ -15,6 +15,7 @@ class PageFavColor1 extends Component {
           const text = colorName+' #/%';
           return <div key={text}>{text}</div>;
         })}
+        <TextLink text={'NEXT'} click={this.props.goNext} />
       </div>
     );
   }// render
@@ -22,6 +23,7 @@ class PageFavColor1 extends Component {
 }
 
 PageFavColor1.defaultProps = {
+  goNext:null,
 };
 
 export default PageFavColor1;
