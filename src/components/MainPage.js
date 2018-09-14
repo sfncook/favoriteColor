@@ -4,6 +4,7 @@ import { PageState } from '../utils.js';
 import PageWelcome from "./PageWelcome";
 import PageColorPick1 from "./PageColorPick1";
 import PageVerifyColor from "./PageVerifyColor";
+import PageFavColor1 from "./PageFavColor1";
 
 import '../App.css';
 
@@ -28,7 +29,10 @@ class MainPage extends Component {
         page = <PageColorPick1 pickColor={this.pickColor.bind(this)}/>;
         break;
       case PageState.VERIFY_COLOR:
-        page = <PageVerifyColor colorIndex={this.state.colorIndex} goBack={this.gotoColorPick1.bind(this)}/>;
+        page = <PageVerifyColor colorIndex={this.state.colorIndex} goBack={this.gotoColorPick1.bind(this)} goNext={this.gotoFavColor1.bind(this)} />;
+        break;
+      case PageState.FAV_COLOR_1:
+        page = <PageFavColor1 />;
         break;
       default:
         break;
@@ -42,7 +46,6 @@ class MainPage extends Component {
   }// render
 
   gotoColorPick1() {
-    console.log('click');
     this.setState({pageState:PageState.COLOR_PICK_1});
   }
 
@@ -50,6 +53,10 @@ class MainPage extends Component {
     this.setState({colorIndex:colorIndex}, ()=>{
       this.setState({pageState:PageState.VERIFY_COLOR});
     });
+  }
+
+  gotoFavColor1() {
+    this.setState({pageState:PageState.FAV_COLOR_1});
   }
 
 }

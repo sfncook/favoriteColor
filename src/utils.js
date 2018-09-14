@@ -2,6 +2,7 @@ const PageState = {
   WELCOME: 1,
   COLOR_PICK_1: 2,
   VERIFY_COLOR: 3,
+  FAV_COLOR_1: 4,
 };
 
 const Color = {

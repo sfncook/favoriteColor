@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 import '../App.css';
-import { ColorProps } from '../utils.js';
+// import { ColorProps } from '../utils.js';
+import {Color} from "../utils";
+// import TextLink from "./TextLink";
 
 class PageFavColor1 extends Component {
 
@@ -9,8 +11,10 @@ class PageFavColor1 extends Component {
     return (
       <div className="centered">
         <h1>PARTICIPANTS’ FAVORITE COLORS:</h1>
-        <div style={{marginTop:'20px'}}>IF YOU WANT TO SELECT A DIFFERENT COLOR, <span onClick={this.props.goBack} className={'text-link'}>GO BACK</span>.</div>
-        <div style={{marginTop:'20px'}}>IF {colorName} IS CORRECT, CLICK HERE.</div>
+        {Object.keys(Color).map((colorName)=>{
+          const text = colorName+' #/%';
+          return <div key={text}>{text}</div>;
+        })}
       </div>
     );
   }// render
@@ -18,8 +22,6 @@ class PageFavColor1 extends Component {
 }
 
 PageFavColor1.defaultProps = {
-  colorIndex:null,
-  goBack:null,
 };
 
 export default PageFavColor1;
