@@ -2,31 +2,17 @@ import React, { Component } from 'react';
 
 import TextLink from "./TextLink";
 import '../App.css';
+import { Color } from '../utils.js';
 
 class PageColorPick1 extends Component {
 
-  colors = [
-    'GREEN',
-    'BLUE',
-    'PURPLE',
-    'RED',
-    'ORANGE',
-    'YELLOW',
-    'BROWN',
-    'PINK',
-    'BLACK',
-    'GRAY',
-    'WHITE',
-    'TURQUOISE',
-    'BEIGE',
-  ];
-
   render() {
+    // console.log('Object.keys(Color):',Object.keys(Color));
     return (
       <div className="centered">
         <h1 style={{whiteSpace:'nowrap', fontWeight:'normal'}}>WHAT IS YOUR FAVORITE COLOR?</h1>
-        {this.colors.map((color)=>{
-          return <TextLink text={color} click={this.clickColor(color)} key={color}/>;
+        {Object.keys(Color).map((colorObj)=>{
+          return <TextLink text={colorObj} click={this.clickColor(colorObj)} key={colorObj}/>;
         })}
         <div style={{marginTop:'30px'}}>PLEASE CLICK ON YOUR FAVORITE COLOR.</div>
         <div>
