@@ -17,14 +17,13 @@ class MainPage extends Component {
   }
 
   render() {
-    console.log('render');
     let page;
     switch (this.state.pageState) {
       case PageState.WELCOME:
-        page = <PageWelcome clickNext={this.setPageState_ColorPick1}/>;
+        page = <PageWelcome nextWelcome={this.nextWelcome.bind(this)}/>;
         break;
       case PageState.COLOR_PICK_1:
-        page = <PageColorPick1 clickNext={this.setPageState_ColorPick1}/>;
+        page = <PageColorPick1 pickColor={this.pickColor.bind(this)}/>;
         break;
       default:
         break;
@@ -37,10 +36,13 @@ class MainPage extends Component {
     );
   }// render
 
-  setPageState_ColorPick1(e) {
-    e.preventDefault();
+  nextWelcome() {
     console.log('click');
     this.setState({pageState:PageState.COLOR_PICK_1});
+  }
+
+  pickColor(newColor) {
+    console.log('click pickColor newColor:',newColor);
   }
 
 }
