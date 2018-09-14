@@ -5,6 +5,7 @@ const PageState = {
   FAV_COLOR_1: 4,
   NOTE_1:5,
   COLOR_PICK_2: 6,
+  VERIFY_COLOR2: 7,
 };
 
 const Color = {

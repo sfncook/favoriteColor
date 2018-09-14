@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import '../App.css';
-// import { ColorProps } from '../utils.js';
 import {Color} from "../utils";
 import TextLink from "./TextLink";
 
